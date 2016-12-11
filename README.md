@@ -1,12 +1,13 @@
-Retry error handlers
-====================
+Retry exception handlers
+========================
 
 [![Latest version][Version image]][Releases]
+[![Total downloads][Downloads image]][Downloads]
 [![Build status][Build image]][Build]
 [![Test coverage][Coverage image]][Coverage]
 [![Code style][Style image]][Style]
 
-Provides error handlers for [Retry][Retry].
+Provides exception handlers for [Retry][Retry].
 
 Requirements
 ------------
@@ -15,12 +16,15 @@ Requirements
 - [Composer](https://getcomposer.org/)
 
 
-  [Releases]: https://github.com/ScriptFUSION/Retry-error-handlers/releases
-  [Version image]: https://poser.pugx.org/scriptfusion/retry-error-handlers/v/stable "Latest version"
-  [Build]: http://travis-ci.org/ScriptFUSION/Retry-error-handlers
-  [Build image]: https://travis-ci.org/ScriptFUSION/Retry-error-handlers.svg "Build status"
-  [Coverage]: https://coveralls.io/github/ScriptFUSION/Retry-Error-Handlers
-  [Coverage image]: https://coveralls.io/repos/ScriptFUSION/Retry-Error-Handlers/badge.svg "Test coverage"
-  [Style]: https://styleci.io/repos/63633635
-  [Style image]: https://styleci.io/repos/63633635/shield?style=flat "Code style"
+  [Releases]: https://github.com/ScriptFUSION/Retry-exception-handlers/releases
+  [Version image]: https://poser.pugx.org/scriptfusion/retry-exception-handlers/v/stable "Latest version"
+  [Downloads]: https://packagist.org/packages/scriptfusion/retry-exception-handlers
+  [Downloads image]: https://poser.pugx.org/scriptfusion/retry-exception-handlers/downloads "Total downloads"
+  [Build]: http://travis-ci.org/ScriptFUSION/Retry-exception-handlers
+  [Build image]: https://travis-ci.org/ScriptFUSION/Retry-exception-handlers.svg "Build status"
+  [Coverage]: https://coveralls.io/github/ScriptFUSION/Retry-exception-handlers
+  [Coverage image]: https://coveralls.io/repos/ScriptFUSION/Retry-exception-handlers/badge.svg "Test coverage"
+  [Style]: https://styleci.io/repos/76198855
+  [Style image]: https://styleci.io/repos/76198855/shield?style=flat "Code style"
+
   [Retry]: https://github.com/ScriptFUSION/Retry 

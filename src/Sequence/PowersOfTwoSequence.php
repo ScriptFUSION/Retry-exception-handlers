@@ -1,5 +1,5 @@
 <?php
-namespace ScriptFUSION\Retry\Sequence;
+namespace ScriptFUSION\Retry\ExceptionHandler\Sequence;
 
 final class PowersOfTwoSequence implements \IteratorAggregate
 {

@@ -1,13 +1,13 @@
 <?php
-namespace ScriptFUSIONTest\Retry\Unit\ErrorHandler;
+namespace ScriptFUSIONTest\Retry\Unit\ExceptionHandler;
 
-use ScriptFUSION\Retry\ErrorHandler\MicroSleepErrorHandler;
+use ScriptFUSION\Retry\ExceptionHandler\MicroSleepExceptionHandler;
 
-final class MicroSleepErrorHandlerTest extends \PHPUnit_Framework_TestCase
+final class MicroSleepExceptionHandlerTest extends \PHPUnit_Framework_TestCase
 {
     public function testValue()
     {
-        $handler = new MicroSleepErrorHandler(new \ArrayIterator([1000000]));
+        $handler = new MicroSleepExceptionHandler(new \ArrayIterator([1000000]));
 
         $start = microtime(true);
         $handler();
@@ -17,7 +17,7 @@ final class MicroSleepErrorHandlerTest extends \PHPUnit_Framework_TestCase
 
     public function testSeries()
     {
-        $handler = new MicroSleepErrorHandler(new \ArrayIterator($delays = array_fill(0, $limit = 10, 100000)));
+        $handler = new MicroSleepExceptionHandler(new \ArrayIterator($delays = array_fill(0, $limit = 10, 100000)));
 
         $start = microtime(true);
         for ($counter = 0; $counter < $limit; ++$counter) {

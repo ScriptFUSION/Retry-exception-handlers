@@ -1,12 +1,12 @@
 <?php
-namespace ScriptFUSION\Retry\ErrorHandler;
+namespace ScriptFUSION\Retry\ExceptionHandler;
 
-use ScriptFUSION\Retry\Sequence\PowersOfTwoSequence;
+use ScriptFUSION\Retry\ExceptionHandler\Sequence\PowersOfTwoSequence;
 
 /**
  * Sleeps for an exponentially increasing series of delays.
  */
-class ExponentialBackoffErrorHandler extends MicroSleepErrorHandler
+class ExponentialBackoffExceptionHandler extends MicroSleepExceptionHandler
 {
     private $microTimeCoefficient;
 

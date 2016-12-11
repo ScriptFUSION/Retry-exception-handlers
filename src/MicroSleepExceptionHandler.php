@@ -1,10 +1,10 @@
 <?php
-namespace ScriptFUSION\Retry\ErrorHandler;
+namespace ScriptFUSION\Retry\ExceptionHandler;
 
 /**
  * Sleeps for a series of microsecond delays for each invocation.
  */
-class MicroSleepErrorHandler
+class MicroSleepExceptionHandler
 {
     private $delays;
 

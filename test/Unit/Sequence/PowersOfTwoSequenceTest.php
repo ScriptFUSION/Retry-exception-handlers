@@ -1,7 +1,7 @@
 <?php
-namespace ScriptFUSIONTest\Retry\Unit\Sequence;
+namespace ScriptFUSIONTest\Retry\Unit\ExceptionHandler\Sequence;
 
-use ScriptFUSION\Retry\Sequence\PowersOfTwoSequence;
+use ScriptFUSION\Retry\ExceptionHandler\Sequence\PowersOfTwoSequence;
 
 final class PowersOfTwoSequenceTest extends \PHPUnit_Framework_TestCase
 {

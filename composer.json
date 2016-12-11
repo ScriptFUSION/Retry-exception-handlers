@@ -1,6 +1,6 @@
 {
-  "name": "scriptfusion/retry-error-handlers",
-  "description": "Error handlers for Retry.",
+  "name": "scriptfusion/retry-exception-handlers",
+  "description": "Exception handlers for Retry.",
   "authors": [
     {
       "name": "Bilge",
@@ -15,12 +15,12 @@
   },
   "autoload": {
     "psr-4": {
-      "ScriptFUSION\\Retry\\": "src"
+      "ScriptFUSION\\Retry\\ExceptionHandler\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "ScriptFUSIONTest\\Retry\\": "test"
+      "ScriptFUSIONTest\\Retry\\ExceptionHandler\\": "test"
     }
   }
 }
