@@ -8,9 +8,11 @@ use ScriptFUSION\Retry\ExceptionHandler\Sequence\PowersOfTwoSequence;
  */
 class ExponentialBackoffExceptionHandler extends MicroSleepExceptionHandler
 {
+    const DEFAULT_COEFFICIENT = 102000;
+
     private $microTimeCoefficient;
 
-    public function __construct($microTimeCoefficient = 102000)
+    public function __construct($microTimeCoefficient = self::DEFAULT_COEFFICIENT)
     {
         parent::__construct($this->generateSequence(
             $this->microTimeCoefficient = $microTimeCoefficient|0

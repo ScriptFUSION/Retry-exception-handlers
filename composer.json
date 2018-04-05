@@ -11,7 +11,7 @@
     "scriptfusion/retry": "^1"
   },
   "require-dev": {
-    "phpunit/phpunit": "^4"
+    "phpunit/phpunit": "^4.8"
   },
   "autoload": {
     "psr-4": {
@@ -22,5 +22,8 @@
     "psr-4": {
       "ScriptFUSIONTest\\Retry\\ExceptionHandler\\": "test"
     }
+  },
+  "scripts": {
+    "test": "phpunit -c test"
   }
 }
