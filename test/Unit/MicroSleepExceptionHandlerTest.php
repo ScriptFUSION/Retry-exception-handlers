@@ -1,9 +1,11 @@
-<?php
+<?php declare(strict_types=1);
+
 namespace ScriptFUSIONTest\Retry\Unit\ExceptionHandler;
 
+use PHPUnit\Framework\TestCase;
 use ScriptFUSION\Retry\ExceptionHandler\MicroSleepExceptionHandler;
 
-final class MicroSleepExceptionHandlerTest extends \PHPUnit_Framework_TestCase
+final class MicroSleepExceptionHandlerTest extends TestCase
 {
     public function testValue()
     {

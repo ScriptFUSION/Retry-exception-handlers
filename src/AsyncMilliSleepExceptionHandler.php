@@ -1,11 +1,14 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types=1);
 
 namespace ScriptFUSION\Retry\ExceptionHandler;
 
+use Amp\Delayed;
+
 /**
- * Sleeps for a series of microsecond delays on each invocation.
+ * Delays for a series of millisecond delays on each invocation.
  */
-class MicroSleepExceptionHandler
+class AsyncMilliSleepExceptionHandler
 {
     private $delays;
 
@@ -16,8 +19,10 @@ class MicroSleepExceptionHandler
 
     public function __invoke()
     {
-        usleep($this->delays->current());
+        $delay = $this->delays->current();
 
         $this->delays->next();
+
+        return new Delayed($delay);
     }
 }

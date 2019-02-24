@@ -1,9 +1,11 @@
-<?php
+<?php declare(strict_types=1);
+
 namespace ScriptFUSIONTest\Retry\Unit\ExceptionHandler\Sequence;
 
+use PHPUnit\Framework\TestCase;
 use ScriptFUSION\Retry\ExceptionHandler\Sequence\PowersOfTwoSequence;
 
-final class PowersOfTwoSequenceTest extends \PHPUnit_Framework_TestCase
+final class PowersOfTwoSequenceTest extends TestCase
 {
     public function testSequence()
     {

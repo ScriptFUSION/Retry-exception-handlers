@@ -1,9 +1,11 @@
-<?php
+<?php declare(strict_types=1);
+
 namespace ScriptFUSIONTest\Retry\Unit\ExceptionHandler;
 
+use PHPUnit\Framework\TestCase;
 use ScriptFUSION\Retry\ExceptionHandler\ExponentialBackoffExceptionHandler;
 
-final class ExponentialBackoffExceptionHandlerTest extends \PHPUnit_Framework_TestCase
+final class ExponentialBackoffExceptionHandlerTest extends TestCase
 {
     public function test()
     {

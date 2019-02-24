@@ -1,4 +1,5 @@
-<?php
+<?php declare(strict_types=1);
+
 namespace ScriptFUSION\Retry\ExceptionHandler;
 
 use ScriptFUSION\Retry\ExceptionHandler\Sequence\PowersOfTwoSequence;
@@ -15,11 +16,11 @@ class ExponentialBackoffExceptionHandler extends MicroSleepExceptionHandler
     public function __construct($microTimeCoefficient = self::DEFAULT_COEFFICIENT)
     {
         parent::__construct($this->generateSequence(
-            $this->microTimeCoefficient = $microTimeCoefficient|0
+            $this->microTimeCoefficient = $microTimeCoefficient | 0
         ));
     }
 
-    private function generateSequence($coefficient)
+    private function generateSequence($coefficient): \Generator
     {
         foreach (new PowersOfTwoSequence as $base) {
             yield $base * $coefficient;
