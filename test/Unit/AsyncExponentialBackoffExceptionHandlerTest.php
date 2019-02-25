@@ -15,14 +15,14 @@ final class AsyncExponentialBackoffExceptionHandlerTest extends TestCase
     {
         $handler = new AsyncExponentialBackoffExceptionHandler;
 
-        \Amp\Loop::run(static function () use ($handler): \Generator {
-            $start = microtime(true);
+        $start = microtime(true);
 
+        \Amp\Loop::run(static function () use ($handler): \Generator {
             for ($counter = 0; $counter < 4; ++$counter) {
                 yield $handler();
             }
-
-            self::assertGreaterThan($start + 1.5, microtime(true));
         });
+
+        self::assertGreaterThan($start + 1.5, microtime(true));
     }
 }
