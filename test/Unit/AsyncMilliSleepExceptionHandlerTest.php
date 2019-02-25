@@ -15,10 +15,13 @@ final class AsyncMilliSleepExceptionHandlerTest extends TestCase
     {
         $handler = new AsyncMilliSleepExceptionHandler(new \ArrayIterator([1000]));
 
-        $start = microtime(true);
-        \Amp\Promise\wait($handler());
+        \Amp\Loop::run(static function () use ($handler): \Generator {
+            $start = microtime(true);
 
-        self::assertGreaterThan($start + 1, microtime(true));
+            yield $handler();
+
+            self::assertGreaterThan($start + 1, microtime(true));
+        });
     }
 
     public function testSeries()
