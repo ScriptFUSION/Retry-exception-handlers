@@ -27,14 +27,14 @@ final class AsyncMilliSleepExceptionHandlerTest extends TestCase
             new \ArrayIterator($delays = array_fill(0, $limit = 10, 100))
         );
 
-        $start = microtime(true);
-
         \Amp\Loop::run(static function () use ($handler, $limit): \Generator {
+            $start = microtime(true);
+
             for ($counter = 0; $counter < $limit; ++$counter) {
                 yield $handler();
             }
-        });
 
-        self::assertGreaterThan($start + 1, microtime(true));
+            self::assertGreaterThan($start + 1, microtime(true));
+        });
     }
 }

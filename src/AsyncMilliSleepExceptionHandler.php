@@ -6,7 +6,7 @@ namespace ScriptFUSION\Retry\ExceptionHandler;
 use Amp\Delayed;
 
 /**
- * Delays for a series of millisecond delays on each invocation.
+ * Delays the current asynchronous execution context for a series of millisecond delays on each invocation.
  */
 class AsyncMilliSleepExceptionHandler
 {
@@ -19,6 +19,7 @@ class AsyncMilliSleepExceptionHandler
 
     public function __invoke()
     {
+        // TODO: Iterator validation. i.e. What happens when the iterator is no longer valid?
         $delay = $this->delays->current();
 
         $this->delays->next();
