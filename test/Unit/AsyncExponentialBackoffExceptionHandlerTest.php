@@ -23,6 +23,6 @@ final class AsyncExponentialBackoffExceptionHandlerTest extends TestCase
             }
         });
 
-        self::assertGreaterThan($start + 1.5, microtime(true));
+        self::assertGreaterThan($start + 1.499, microtime(true));
     }
 }

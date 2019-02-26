@@ -21,7 +21,7 @@ final class AsyncMilliSleepExceptionHandlerTest extends TestCase
             yield $handler();
         });
 
-        self::assertGreaterThan($start + 1, microtime(true));
+        self::assertGreaterThan($start + .999, microtime(true));
     }
 
     public function testSeries()
@@ -38,6 +38,6 @@ final class AsyncMilliSleepExceptionHandlerTest extends TestCase
             }
         });
 
-        self::assertGreaterThan($start + 1, microtime(true));
+        self::assertGreaterThan($start + .999, microtime(true));
     }
 }
