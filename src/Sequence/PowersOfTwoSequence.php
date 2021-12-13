@@ -12,7 +12,7 @@ final class PowersOfTwoSequence implements \IteratorAggregate
 {
     private $power = 0;
 
-    public function getIterator()
+    public function getIterator(): \Traversable
     {
         yield 1;
 
