@@ -8,7 +8,7 @@ use ScriptFUSION\Retry\ExceptionHandler\MicroSleepExceptionHandler;
 
 final class MicroSleepExceptionHandlerTest extends TestCase
 {
-    public function testValue()
+    public function testValue(): void
     {
         $handler = new MicroSleepExceptionHandler(new \ArrayIterator([1000000]));
 
@@ -18,7 +18,7 @@ final class MicroSleepExceptionHandlerTest extends TestCase
         self::assertGreaterThan($start + 1, microtime(true));
     }
 
-    public function testSeries()
+    public function testSeries(): void
     {
         $handler = new MicroSleepExceptionHandler(new \ArrayIterator($delays = array_fill(0, $limit = 10, 100000)));
 

@@ -5,38 +5,37 @@ namespace ScriptFUSIONTest\Retry\ExceptionHandler\Unit;
 
 use PHPUnit\Framework\TestCase;
 use ScriptFUSION\Retry\ExceptionHandler\AsyncMilliSleepExceptionHandler;
+use function Amp\async;
 
 /**
  * @see AsyncMilliSleepExceptionHandler
  */
 final class AsyncMilliSleepExceptionHandlerTest extends TestCase
 {
-    public function testValue()
+    public function testValue(): void
     {
         $handler = new AsyncMilliSleepExceptionHandler(new \ArrayIterator([1000]));
 
         $start = microtime(true);
 
-        \Amp\Loop::run(static function () use ($handler): \Generator {
-            yield $handler();
-        });
+        async(fn () => $handler())->await();
 
         self::assertGreaterThan($start + .999, microtime(true));
     }
 
-    public function testSeries()
+    public function testSeries(): void
     {
         $handler = new AsyncMilliSleepExceptionHandler(
-            new \ArrayIterator($delays = array_fill(0, $limit = 10, 100))
+            new \ArrayIterator(array_fill(0, $limit = 10, 100))
         );
 
         $start = microtime(true);
 
-        \Amp\Loop::run(static function () use ($handler, $limit): \Generator {
+        async(static function () use ($handler, $limit): void {
             for ($counter = 0; $counter < $limit; ++$counter) {
-                yield $handler();
+                $handler();
             }
-        });
+        })->await();
 
         self::assertGreaterThan($start + .999, microtime(true));
     }

@@ -12,13 +12,11 @@ use ScriptFUSION\Retry\ExceptionHandler\Sequence\PowersOfTwoSequence;
  */
 class AsyncExponentialBackoffExceptionHandler extends AsyncMilliSleepExceptionHandler
 {
-    const DEFAULT_COEFFICIENT = 102;
+    public const DEFAULT_COEFFICIENT = 102;
 
-    private $millisecondCoefficient;
-
-    public function __construct(int $millisecondCoefficient = self::DEFAULT_COEFFICIENT)
+    public function __construct(private readonly int $millisecondCoefficient = self::DEFAULT_COEFFICIENT)
     {
-        parent::__construct($this->generateSequence($this->millisecondCoefficient = $millisecondCoefficient));
+        parent::__construct($this->generateSequence($this->millisecondCoefficient));
     }
 
     private function generateSequence($coefficient): \Generator

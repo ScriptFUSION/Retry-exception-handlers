@@ -10,7 +10,7 @@ namespace ScriptFUSION\Retry\ExceptionHandler\Sequence;
  */
 final class PowersOfTwoSequence implements \IteratorAggregate
 {
-    private $power = 0;
+    private int $power = 0;
 
     public function getIterator(): \Traversable
     {

@@ -12,18 +12,14 @@ use ScriptFUSION\Retry\ExceptionHandler\Sequence\PowersOfTwoSequence;
  */
 class ExponentialBackoffExceptionHandler extends MicroSleepExceptionHandler
 {
-    const DEFAULT_COEFFICIENT = 102000;
+    public const DEFAULT_COEFFICIENT = 102000;
 
-    private $microTimeCoefficient;
-
-    public function __construct($microTimeCoefficient = self::DEFAULT_COEFFICIENT)
+    public function __construct(private readonly int $microTimeCoefficient = self::DEFAULT_COEFFICIENT)
     {
-        parent::__construct($this->generateSequence(
-            $this->microTimeCoefficient = $microTimeCoefficient | 0
-        ));
+        parent::__construct($this->generateSequence($this->microTimeCoefficient));
     }
 
-    private function generateSequence($coefficient): \Generator
+    private function generateSequence(int $coefficient): \Generator
     {
         foreach (new PowersOfTwoSequence as $base) {
             yield $base * $coefficient;

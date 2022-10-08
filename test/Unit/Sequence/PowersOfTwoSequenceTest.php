@@ -14,7 +14,7 @@ final class PowersOfTwoSequenceTest extends TestCase
     /**
      * Tests that the iterator yields the expected sequence values.
      */
-    public function testSequence()
+    public function testSequence(): void
     {
         $powers = new \LimitIterator((new PowersOfTwoSequence)->getIterator(), 0, 6);
 
@@ -24,7 +24,7 @@ final class PowersOfTwoSequenceTest extends TestCase
     /**
      * Tests that the iterator will not yield values forever.
      */
-    public function testIsFiniteSequence()
+    public function testIsFiniteSequence(): void
     {
         $counter = 0;
         foreach (new \LimitIterator((new PowersOfTwoSequence)->getIterator(), 0, $limit = 100) as $_) {

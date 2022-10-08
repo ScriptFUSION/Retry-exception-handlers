@@ -12,7 +12,7 @@ Provides exception handlers for [Retry][Retry].
 Requirements
 ------------
 
-- [PHP 5.5](http://php.net/)
+- [PHP 8.1](http://php.net/)
 - [Composer](https://getcomposer.org/)
 
 
@@ -20,8 +20,8 @@ Requirements
   [Version image]: https://poser.pugx.org/scriptfusion/retry-exception-handlers/v/stable "Latest version"
   [Downloads]: https://packagist.org/packages/scriptfusion/retry-exception-handlers
   [Downloads image]: https://poser.pugx.org/scriptfusion/retry-exception-handlers/downloads "Total downloads"
-  [Build]: http://travis-ci.org/ScriptFUSION/Retry-exception-handlers
-  [Build image]: https://travis-ci.org/ScriptFUSION/Retry-exception-handlers.svg "Build status"
+  [Build]: https://github.com/ScriptFUSION/Retry-exception-handlers/actions/workflows/Tests.yaml
+  [Build image]: https://github.com/ScriptFUSION/Retry-exception-handlers/actions/workflows/Tests.yaml/badge.svg "Build status"
   [Coverage]: https://coveralls.io/github/ScriptFUSION/Retry-exception-handlers
   [Coverage image]: https://coveralls.io/repos/ScriptFUSION/Retry-exception-handlers/badge.svg "Test coverage"
   [Style]: https://styleci.io/repos/76198855

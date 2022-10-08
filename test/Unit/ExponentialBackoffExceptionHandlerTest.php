@@ -11,7 +11,7 @@ use ScriptFUSION\Retry\ExceptionHandler\ExponentialBackoffExceptionHandler;
  */
 final class ExponentialBackoffExceptionHandlerTest extends TestCase
 {
-    public function test()
+    public function test(): void
     {
         $handler = new ExponentialBackoffExceptionHandler;
 

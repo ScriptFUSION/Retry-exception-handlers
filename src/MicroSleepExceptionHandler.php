@@ -8,14 +8,11 @@ namespace ScriptFUSION\Retry\ExceptionHandler;
  */
 class MicroSleepExceptionHandler
 {
-    private $delays;
-
-    public function __construct(\Iterator $delays)
+    public function __construct(private readonly \Iterator $delays)
     {
-        $this->delays = $delays;
     }
 
-    public function __invoke()
+    public function __invoke(): void
     {
         usleep($this->delays->current());
 

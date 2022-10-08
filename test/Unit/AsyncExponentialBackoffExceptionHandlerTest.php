@@ -5,23 +5,24 @@ namespace ScriptFUSIONTest\Retry\ExceptionHandler\Unit;
 
 use PHPUnit\Framework\TestCase;
 use ScriptFUSION\Retry\ExceptionHandler\AsyncExponentialBackoffExceptionHandler;
+use function Amp\async;
 
 /**
  * @see AsyncExponentialBackoffExceptionHandler
  */
 final class AsyncExponentialBackoffExceptionHandlerTest extends TestCase
 {
-    public function test()
+    public function test(): void
     {
         $handler = new AsyncExponentialBackoffExceptionHandler;
 
         $start = microtime(true);
 
-        \Amp\Loop::run(static function () use ($handler): \Generator {
+        async(static function () use ($handler): void {
             for ($counter = 0; $counter < 4; ++$counter) {
-                yield $handler();
+                $handler();
             }
-        });
+        })->await();
 
         self::assertGreaterThan($start + 1.499, microtime(true));
     }
