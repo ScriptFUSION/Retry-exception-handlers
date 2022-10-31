@@ -9,7 +9,7 @@
   ],
   "require": {
     "php": "^8.1",
-    "scriptfusion/retry": "^1|^2|^3|^4"
+    "scriptfusion/retry": "^1|^2|^3|^4|^5"
   },
   "require-dev": {
     "amphp/amp": "^3-beta.9",
